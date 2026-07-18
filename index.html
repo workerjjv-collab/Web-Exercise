@@ -655,22 +655,6 @@
     <span class="zumba-pill">⚡ 50–60 min por sesión</span>
     <span class="zumba-pill">👥 Todos los niveles bienvenidos</span>
   </div>
-
-  <!-- Upload fotos -->
-  <div class="zumba-upload-zone"
-       onclick="document.getElementById('zumba-file-input').click()">
-    <span class="up-icon">🎉</span>
-    <p>Sube tus fotos y momentos de Zumba y Rumba</p>
-    <label>Seleccionar imágenes</label>
-    <input
-      type="file"
-      id="zumba-file-input"
-      multiple
-      accept="image/*"
-      onchange="zumbaGallery(this)"
-    >
-  </div>
-
   <!-- Galería -->
   <div class="zumba-gallery" id="zumba-gallery"></div>
 
@@ -688,8 +672,7 @@
 
 
 <!-- =============================================
-     PARTE 8 — ESPACIOS DEL GYM (fotos + videos)
-     Pegar después de la sección Zumba
+     PARTE 8 — ESPACIOS DEL GYM 
 ============================================= -->
 
 
@@ -710,66 +693,13 @@
       Conoce cada rincón de Exercise.
     </p>
   </div>
-
-  <!-- Tabs -->
-  <div class="espacios-tabs">
-    <button class="tab-btn active"
-            onclick="switchTab('fotos-panel', this)">
-      📷 Fotos del Gym
-    </button>
-    <button class="tab-btn"
-            onclick="switchTab('videos-panel', this)">
-      🎥 Videos de Espacios
-    </button>
-  </div>
-
   <!-- Panels -->
   <div class="espacios-content">
-
-    <!-- Panel fotos -->
-    <div class="tab-panel active" id="fotos-panel">
-
-      <div class="media-upload-box"
-           onclick="document.getElementById('gym-fotos-input').click()">
-        <span class="up-icon">🏋️</span>
-        <p>Sube fotos de la sala de máquinas, barras, espacios y equipos</p>
-        <label>Seleccionar fotos</label>
-        <input
-          type="file"
-          id="gym-fotos-input"
-          multiple
-          accept="image/*"
-          onchange="addFotos(this)"
-        >
-      </div>
-
       <div class="fotos-grid" id="fotos-grid"></div>
 
     </div>
 
-    <!-- Panel videos -->
-    <div class="tab-panel" id="videos-panel">
-
-      <div class="media-upload-box"
-           onclick="document.getElementById('gym-videos-input').click()">
-        <span class="up-icon">🎬</span>
-        <p>Sube recorridos y tours en video de los espacios del gym</p>
-        <label>Seleccionar videos</label>
-        <input
-          type="file"
-          id="gym-videos-input"
-          multiple
-          accept="video/*"
-          onchange="addVideos(this)"
-        >
-      </div>
-
-      <div class="videos-grid" id="videos-grid"></div>
-
-    </div>
-
-  </div>
-
+    
   <!-- Amenidades -->
   <div class="amenidades" style="max-width:1100px;margin-left:auto;margin-right:auto;position:relative;z-index:1;">
     <div class="amenidad-card">
@@ -1150,21 +1080,6 @@
 
     <!-- Columna derecha -->
     <div class="rutina-cartel-col">
-
-      <!-- Upload del cartel -->
-      <div class="cartel-upload-zone" id="cartel-zone"
-           onclick="document.getElementById('cartel-input').click()">
-        <span class="up-icon">🗓️</span>
-        <h4>Cartel de Rutina</h4>
-        <p>Sube aquí el cartel con el método de diseño de rutina según las necesidades del usuario</p>
-        <label>Subir imagen del cartel</label>
-        <input
-          type="file"
-          id="cartel-input"
-          accept="image/*"
-          onchange="loadCartel(this)"
-        >
-        <img id="cartel-preview" src="" alt="Cartel de rutina">
       </div>
 
       <button id="cartel-change-btn"
@@ -1219,184 +1134,14 @@
       TIENDA<br>
       <span class="accent">DEL GYM</span>
     </h2>
-    <p class="tienda-desc">
-      Batidos proteínicos, sándwiches saludables, snacks energéticos
-      y accesorios deportivos. Todo lo que necesitas en un solo lugar,
-      justo después de tu entrenamiento.
-    </p>
   </div>
 
-  <!-- Filtros -->
-  <div class="tienda-filters">
-    <button class="filter-btn active" onclick="filterTienda('all', this)">🛒 Todo</button>
-    <button class="filter-btn" onclick="filterTienda('batido', this)">🥤 Batidos</button>
-    <button class="filter-btn" onclick="filterTienda('comida', this)">🥪 Comida</button>
-    <button class="filter-btn" onclick="filterTienda('suplemento', this)">⚡ Suplementos</button>
-    <button class="filter-btn" onclick="filterTienda('accesorio', this)">🏋️ Accesorios</button>
+  <div class="tienda-msg-box">
+    <span class="tienda-msg-icon">💬</span>
+    <span class="tienda-msg">Pregunta a tu entrenador por la tienda</span>
   </div>
-
-  <!-- Grid productos -->
-  <div class="tienda-grid" id="tienda-grid">
-
-    <!-- Batido proteína -->
-    <div class="product-card" data-cat="batido">
-      <div class="product-img" id="img-p1">
-        🥤
-        <div class="product-img-upload">
-        </div>
-        <span class="product-badge">Batido</span>
-      </div>
-      <div class="product-info">
-        <div class="product-name">Batido Proteína Chocolate</div>
-        <div class="product-desc">30g proteína · Bajo en grasa · Con leche o agua</div>
-        <div class="product-footer">
-          <div class="product-price">$</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Batido frutas -->
-    <div class="product-card" data-cat="batido">
-      <div class="product-img" id="img-p2">
-        🍓
-        <img id="photo-p2" src="" alt="">
-        <div class="product-img-upload">
-        </div>
-        <span class="product-badge">Batido</span>
-      </div>
-      <div class="product-info">
-        <div class="product-name">Batido Frutas Tropicales</div>
-        <div class="product-desc">Natural · Vitaminas · Sin conservantes</div>
-        <div class="product-footer">
-          <div class="product-price">$</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sándwich -->
-    <div class="product-card" data-cat="comida">
-      <div class="product-img" id="img-p3">
-        🥪
-        <img id="photo-p3" src="" alt="">
-        <div class="product-img-upload">
-        </div>
-        <span class="product-badge">Comida</span>
-      </div>
-      <div class="product-info">
-        <div class="product-name">Sándwich Post-Entreno</div>
-        <div class="product-desc">Pan integral · Pollo · Vegetales frescos</div>
-        <div class="product-footer">
-          <div class="product-price">$</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Energética -->
-    <div class="product-card" data-cat="suplemento">
-      <div class="product-img" id="img-p4">
-        ⚡
-        <div class="product-img-upload">
-          </div>
-        <span class="product-badge">Suplemento</span>
-      </div>
-      <div class="product-info">
-        <div class="product-name">Bebida Pre-Entreno</div>
-        <div class="product-desc">Cafeína + electrolitos · Alta energía</div>
-        <div class="product-footer">
-          <div class="product-price">$</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Snack -->
-    <div class="product-card" data-cat="comida">
-      <div class="product-img" id="img-p5">
-        🥜
-        <img id="photo-p5" src="" alt="">
-        <div class="product-img-upload">
-        </div>
-        <span class="product-badge">Snack</span>
-      </div>
-      <div class="product-info">
-        <div class="product-name">Snack Proteico</div>
-        <div class="product-desc">Maní + almendras · 15g proteína por porción</div>
-        <div class="product-footer">
-          <div class="product-price">$</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Guantes -->
-    <div class="product-card" data-cat="accesorio">
-      <div class="product-img" id="img-p6">
-        🥊
-        <img id="photo-p6" src="" alt="">
-        <div class="product-img-upload">
-        </div>
-        <span class="product-badge">Accesorio</span>
-      </div>
-      <div class="product-info">
-        <div class="product-name">Guantes de Entrenamiento</div>
-        <div class="product-desc">Tallas S/M/L · Antideslizante · Ventilado</div>
-        <div class="product-footer">
-          <div class="product-price">$</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Agua -->
-    <div class="product-card" data-cat="batido">
-      <div class="product-img" id="img-p7">
-        💧
-        <img id="photo-p7" src="" alt="">
-        <div class="product-img-upload">
-        </div>
-        <span class="product-badge">Bebida</span>
-      </div>
-      <div class="product-info">
-        <div class="product-name">Agua Saborizada</div>
-        <div class="product-desc">Hidratación + electrolitos · Sin azúcar</div>
-        <div class="product-footer">
-          <div class="product-price">$</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cinta -->
-    <div class="product-card" data-cat="accesorio">
-      <div class="product-img" id="img-p8">
-        🩹
-        <img id="photo-p8" src="" alt="">
-        <div class="product-img-upload">
-        </div>
-        <span class="product-badge">Accesorio</span>
-      </div>
-      <div class="product-info">
-        <div class="product-name">Cinta Kinesiológica</div>
-        <div class="product-desc">Soporte muscular · OCR friendly · Varios colores</div>
-        <div class="product-footer">
-          <div class="product-price">$</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Upload fotos extra de la tienda -->
-  <div class="tienda-upload-extra"
-       onclick="document.getElementById('tienda-extra-input').click()">
-    <p>📸 ¿Tienes más fotos del mini market o productos? Súbelas aquí</p>
-    <label>Agregar fotos de la tienda</label>
-    <input type="file" id="tienda-extra-input" multiple accept="image/*"
-           onchange="addTiendaFotos(this)">
-  </div>
-
-  <div class="tienda-fotos-extra" id="tienda-fotos-extra"></div>
 
 </section>
-
-<!-- Toast carrito -->
-<div class="cart-toast" id="cart-toast"></div>
 
 
 

@@ -222,66 +222,6 @@ function loadCartel(input) {
 
 
 
-/* ---- Filtro de categorías ---- */
-function filterTienda(cat, btn) {
-  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-
-  document.querySelectorAll(".product-card").forEach(card => {
-    if (cat === "all" || card.dataset.cat === cat) {
-      card.style.display = "";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
-
-/* ---- Subir foto a producto ---- */
-function setProductImg(input, pid) {
-  const file = input.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    const photo = document.getElementById("photo-" + pid);
-    photo.src = e.target.result;
-    photo.classList.add("loaded");
-    /* Ocultar emoji */
-    const box = document.getElementById("img-" + pid);
-    const emoji = box.childNodes[0];
-    if (emoji && emoji.nodeType === 3) {
-      box.dataset.emoji = emoji.textContent;
-      emoji.textContent = "";
-    }
-  };
-  reader.readAsDataURL(file);
-}
-
-/* ---- Fotos extra tienda ---- */
-function addTiendaFotos(input) {
-  const grid = document.getElementById("tienda-fotos-extra");
-  Array.from(input.files).forEach(file => {
-    const reader = new FileReader();
-    reader.onload = e => {
-      const img = document.createElement("img");
-      img.src = e.target.result;
-      img.onclick = () => openLightbox(e.target.result);
-      grid.appendChild(img);
-    };
-    reader.readAsDataURL(file);
-  });
-  document.querySelector(".tienda-upload-extra").style.display = "none";
-}
-
-/* ---- Toast "pedido" ---- */
-function addToCart(name) {
-  const toast = document.getElementById("cart-toast");
-  toast.textContent = "✅ " + name + " añadido al pedido";
-  toast.style.display = "block";
-  clearTimeout(toast._timer);
-  toast._timer = setTimeout(() => { toast.style.display = "none"; }, 3000);
-}
-
-
 
 function enviarContacto() {
   const nombre  = document.getElementById("c-nombre").value.trim();
